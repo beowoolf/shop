@@ -36,7 +36,7 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.18.1'
     implementation 'com.auth0:java-jwt:4.0.0'
     implementation 'commons-codec:commons-codec:1.15'
-    implementation 'org.ehcache:ehcache:3.10.2'
+    implementation 'org.ehcache:ehcache:3.10.3'
 
     runtimeOnly 'com.mysql:mysql-connector-j'
 
