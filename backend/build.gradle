@@ -34,7 +34,7 @@ dependencies {
     implementation 'com.github.slugify:slugify:2.4'
     implementation 'org.apache.commons:commons-csv:1.9.0'
     implementation 'org.jsoup:jsoup:1.18.1'
-    implementation 'com.auth0:java-jwt:4.2.0'
+    implementation 'com.auth0:java-jwt:4.2.1'
     implementation 'commons-codec:commons-codec:1.17.0'
     implementation 'org.ehcache:ehcache:3.10.8'
 
