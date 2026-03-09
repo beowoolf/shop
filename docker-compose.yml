@@ -1,0 +1,45 @@
+# Use root/toor as user/password credentials
+version: '3.1'
+
+services:
+
+  mysql:
+    image: mysql:8.4
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --mysql-native-password=ON
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: shop
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8082:8080"
+
+  shop:
+    container_name: shop
+    build: ./backend
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    environment:
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: toor
+      DATABASE_HOST: mysql
+      DATABASE_PORT: 3306
+      DATABASE_NAME: shop

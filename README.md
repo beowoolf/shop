@@ -1,0 +1,2 @@
+# shop
+An online store project created using Spring Boot, to which you can connect a frontend written in any technology and with a look appropriate to the given situation. Technologies used in the project: Java 17, Spring Boot Web, Spring Data JPA, Spring Security, Spring Cache, Liquidbase, MySQL, Lombok, Swagger, Spring Validation, Spring Mail, Spring Boot WebFlux, Slugify, CSV, Jsoup, JWT, Gradle/Maven.
